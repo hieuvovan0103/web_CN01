@@ -1,5 +1,6 @@
 # Sau khi clone về tại folder làm việc chính dùng lệnh "npm i" để update lại thư viện rồi "npm run dev"
-tham khảo thêm tại đây: https://www.youtube.com/watch?v=CgkZ7MvWUAA 
+tham khảo thêm tại đây: https://youtu.be/G6D9cBaLViA?si=-LdaCuXPm6JMUurJ
+https://www.youtube.com/watch?v=CgkZ7MvWUAA 
 
 # React + Vite
 
