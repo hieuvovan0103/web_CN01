@@ -1,5 +1,9 @@
 # Sau khi clone về tại folder làm việc chính dùng lệnh "npm i" để update lại thư viện rồi "npm run dev"
-tham khảo thêm tại đây: https://www.youtube.com/watch?v=CgkZ7MvWUAA 
+tham khảo thêm cách code tại đây: vid 1 tiếng (sơ lược cho một project): https://youtu.be/G6D9cBaLViA?si=-LdaCuXPm6JMUurJ
+vid 4 tiếng (tổng thể): https://www.youtube.com/watch?v=CgkZ7MvWUAA 
+
+# Cài đặt thêm tailwindcss
+https://v3.tailwindcss.com/docs/guides/vite: làm chính xác theo hướng dẫn
 
 # React + Vite
 
