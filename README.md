@@ -1,3 +1,6 @@
+# Sau khi clone về tại folder làm việc chính dùng lệnh "npm i" để update lại thư viện rồi "npm run dev"
+tham khảo thêm tại đây: https://www.youtube.com/watch?v=CgkZ7MvWUAA 
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
