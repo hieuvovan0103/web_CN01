@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Footer from './components/Footer.jsx'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import Layout from './components/Layout.jsx';
 
 function App() {
   return (
-    <>
-      <Footer/>
-    </>
-  )
+    <Layout>
+      {/* Nội dung từng trang sẽ được hiển thị ở đây */}
+    </Layout>
+  );
 }
 
-export default App
+export default App;
