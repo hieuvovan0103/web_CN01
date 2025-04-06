@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -10,9 +11,10 @@ const Header = () => {
       
       {/* Navigation */}
       <nav className="flex-1 flex justify-center space-x-8">
-        <a href="#" className="text-black">Mẫu mới</a>
-        <a href="#" className="text-black">Áo thun nữ</a>
-        <a href="#" className="text-black">Áo thun nam</a>
+        <Link to="/" className="text-black">Mẫu mới</Link>
+        <Link to="/" className="text-black">Áo thun nữ</Link>
+        <Link to="/" className="text-black">Áo thun nam</Link>
+        <Link to="/contact" className="text-black">Liên hệ</Link>
       </nav>
       
       {/* User & Cart */}

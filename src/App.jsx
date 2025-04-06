@@ -1,14 +1,19 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
+import HomePage from './HomePage.jsx';
+import ContactPage from './ContactPage.jsx';
 
 function App() {
   return (
-    <Layout>
-      {/* Nội dung từng trang sẽ được hiển thị ở đây */}
-    </Layout>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
