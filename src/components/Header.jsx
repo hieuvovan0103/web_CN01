@@ -15,6 +15,7 @@ const Header = () => {
         <Link to="/" className="text-black">Áo thun nữ</Link>
         <Link to="/" className="text-black">Áo thun nam</Link>
         <Link to="/contact" className="text-black">Liên hệ</Link>
+        <Link to="/blog" className="text-black">Blog</Link>
       </nav>
       
       {/* User & Cart */}

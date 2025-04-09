@@ -15,7 +15,7 @@ const HomePage = () => {
         <h1 className="text-6xl font-bold mb-4">T SHOP</h1>
         <p className="bg-lime-400 inline-block px-6 py-2 mb-8 text-lg">Luôn tự tin là chính mình</p>
         <div className="flex justify-center gap-8 mb-8">
-          <img src="https://via.placeholder.com/300x400" alt="Model 1" className="w-72 h-96 object-cover" />
+          <img src="https://via.placeholder.com/300x400" alt="Model 1" className="w-72 h-96 object-cover border border-3 border-solid" />
           <img src="https://via.placeholder.com/300x400" alt="Model 2" className="w-72 h-96 object-cover" />
           <img src="https://via.placeholder.com/300x400" alt="Model 3" className="w-72 h-96 object-cover" />
         </div>
