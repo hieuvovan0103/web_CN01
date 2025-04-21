@@ -11,9 +11,8 @@ const Header = () => {
       
       {/* Navigation */}
       <nav className="flex-1 flex justify-center space-x-8">
-        <Link to="/" className="text-black">Mẫu mới</Link>
-        <Link to="/" className="text-black">Áo thun nữ</Link>
-        <Link to="/" className="text-black">Áo thun nam</Link>
+        <Link to="/" className="text-black">Mẫu mới</Link>  
+        <Link to="/products" className="text-black">Sản phẩm</Link>
         <Link to="/contact" className="text-black">Liên hệ</Link>
         <Link to="/blog" className="text-black">Blog</Link>
       </nav>
