@@ -7,6 +7,8 @@ import ContactPage from './ContactPage';
 import BlogList from './BlogList';
 import Blog from './Blog';
 import ProductPage from './components/ProductPage'; // Thêm import này
+import QA from './pages/QA';
+import About from "./pages/About.jsx";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/blog" element={<BlogList />} />
           <Route path="/bl" element={<Blog />} />
           <Route path="/products" element={<ProductPage />} /> {/* Thêm route mới */}
+          <Route path="/QA" element={<QA />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Layout>
     </Router>

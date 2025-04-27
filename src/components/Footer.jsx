@@ -3,7 +3,7 @@ import { Facebook, Instagram, Youtube, Github, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="w-full border border-black">
+    <footer className="w-full border ">
       <div className="flex flex-col lg:flex-row">
         <div className="bg-black text-center text-white p-3 lg:w-1/3 lg:p-8 lg:text-left">
           <div>
@@ -57,7 +57,7 @@ const Footer = () => {
           <Twitter size={20} className="cursor-pointer hover:text-gray-400 transition-colors" />
         </div>
         
-        <div className="bg-lime-400 text-center flex-1 p-4 w-full text-center border border-black lg:p-8">
+        <div className="bg-lime-400 text-center flex-1 p-4 w-full text-center border ">
           © 2035 bản quyền của T Shop.
           <div className="md:inline-block md:ps-1">Tự hào tạo ra với <a className="underline text-inherit cursor-pointer hover:text-gray-500 transition-colors">Wix.com</a></div>
         </div>

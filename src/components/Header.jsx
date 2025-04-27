@@ -23,6 +23,8 @@ const Header = () => {
         <Link to="/products" className="text-black hover:text-lime-500">Sản phẩm</Link>
         <Link to="/contact" className="text-black hover:text-lime-500">Liên hệ</Link>
         <Link to="/blog" className="text-black hover:text-lime-500">Blog</Link>
+        <Link to="/QA" className="text-black hover:text-lime-500">Q&A</Link>
+        <Link to="/about" className="text-black hover:text-lime-500">About</Link>
       </nav>
 
       {/* User & Cart (Luôn hiển thị) */}
