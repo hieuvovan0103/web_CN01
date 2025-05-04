@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS `t_shop` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `t_shop`;
+
 -- Users table
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -8,6 +11,21 @@ CREATE TABLE users (
     phone_number VARCHAR(20),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Categories table
+CREATE TABLE categories (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    parent_id INT,
+    FOREIGN KEY (parent_id) REFERENCES categories(category_id)
+);
+
+-- Brands table
+CREATE TABLE brands (
+    brand_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    description TEXT
 );
 
 -- Products table
@@ -33,21 +51,6 @@ CREATE TABLE product_images (
     image_url VARCHAR(255) NOT NULL,
     is_primary BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
-);
-
--- Categories table
-CREATE TABLE categories (
-    category_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    parent_id INT,
-    FOREIGN KEY (parent_id) REFERENCES categories(category_id)
-);
-
--- Brands table
-CREATE TABLE brands (
-    brand_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    description TEXT
 );
 
 -- Product variants (for colors and sizes)
@@ -146,3 +149,8 @@ CREATE TABLE contact_messages (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     is_read BOOLEAN DEFAULT FALSE
 );
+
+INSERT INTO blog_posts (post_id, title, content, featured_image) VALUES
+(1, 'Usb Kingston 3.0', 'USB Kingston siêu mỏng  có hình thức nhỏ gọn và không nắp phù hợp với mọi phong cách năng động.', 'https://m.media-amazon.com/images/I/31UpGSJdmqL._AC_.jpg'),
+(2, 'Ổ cứng di động External SSD', 'Dung lượng: 500GB, 1TB, 2TB Chống sốc, chống nước IP55 Thiết kế nhỏ gọn', 'https://m.media-amazon.com/images/I/911ujeCkGfL._AC_UY436_FMwebp_QL65_.jpg'),
+(3, 'RAM Laptop Samsung 8GB', 'Samsung là một thương hiệu hàng đầu trong việc sản xuất chip nhớ, RAM máy tính. Thời gian gần đây, Samsung đã không ngừng nghiên cứu, cải tiến để tạo ra được những sản phẩm RAM máy tính phục vụ cho mọi nhu cầu của người tiêu dùng. RAM Laptop Samsung 8GB DDR4 3200 chính là một sản phẩm mới của Samsung được tích hợp nhiều ưu điểm trong đó thu hút được mọi người dùng.', 'https://m.media-amazon.com/images/I/71cWL5j3FqL._AC_UY436_FMwebp_QL65_.jpg');

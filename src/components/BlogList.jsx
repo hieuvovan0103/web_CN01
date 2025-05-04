@@ -1,40 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const BlogList = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Fetch blogs when the component mounts
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch('http://localhost/backend/authentication/getBlog.php'); // Replace with your API URL
+        const data = await response.json();
+        if (data.error) {
+          console.error(data.error);
+          return;
+        }
+        setBlogs(data);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  // Handle search input
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Filter blogs based on search query
+  const filteredBlogs = blogs.filter((blog) =>
+    blog.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div>
-      <section class="search-bar">
-        <div class="container">
-            <input type="text" placeholder="Tìm kiếm bài viết..." id="search-input" />
-            <button class="bg-lime-400 text-black ms-2">Tìm</button>
+      <section className="search-bar">
+        <div className="container">
+          <input
+            type="text"
+            placeholder="Tìm kiếm bài viết..."
+            id="search-input"
+            value={searchQuery}
+            onChange={handleSearch}
+          />
+          <button className="bg-lime-400 text-black ms-2">Tìm</button>
         </div>
       </section>
 
-      <section class="py-10">
+      <section className="py-10">
         <div>
-            <div class="grid grid-cols-3 gap-5">
-                <div class="post-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Bài viết 1" />
-                    <h2><a href="../pages/Blog.jsx" class="text-lime-400 hover:text-lime-500">Tiêu đề bài viết 1</a></h2>
-                    <p>Ngày đăng: 08/04/2025</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div className="grid grid-cols-3 gap-5">
+            {filteredBlogs.length > 0 ? (
+              filteredBlogs.map((blog) => (
+                <div key={blog.id} className="post-card">
+                  <img
+                    src={blog.image || 'https://via.placeholder.com/300x200'} // Fallback image if none exists
+                    alt={blog.title}
+                  />
+                  <h2>
+                    <a
+                      href={`/blog/${blog.id}`} // Link to individual blog page
+                      className="text-lime-400 hover:text-lime-500"
+                    >
+                      {blog.title}
+                    </a>
+                  </h2>
+                  <p>Ngày đăng: {blog.date}</p>
+                  <p>{blog.excerpt}</p>
                 </div>
-                <div class="post-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Bài viết 2" />
-                    <h2><a href="post.html" class="text-lime-400 hover:text-lime-500">Tiêu đề bài viết 2</a></h2>
-                    <p>Ngày đăng: 07/04/2025</p>
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="post-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Bài viết 3" />
-                    <h2><a href="post.html" class="text-lime-400 hover:text-lime-500">Tiêu đề bài viết 3</a></h2>
-                    <p>Ngày đăng: 06/04/2025</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-            </div>
-            <button class="block bg-black hover: text-white px-8 py-3 text-lg mt-3 m-auto">Tải thêm</button>
+              ))
+            ) : (
+              <p>Không có bài viết nào.</p>
+            )}
+          </div>
+          <button className="block bg-black hover:text-white px-8 py-3 text-lg mt-3 m-auto">
+            Tải thêm
+          </button>
         </div>
-    </section>
+      </section>
     </div>
   );
 };
