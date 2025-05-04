@@ -15,7 +15,7 @@ const BlogList = () => {
             <div class="grid grid-cols-3 gap-5">
                 <div class="post-card">
                     <img src="https://via.placeholder.com/300x200" alt="Bài viết 1" />
-                    <h2><a href="Blog.jsx" class="text-lime-400 hover:text-lime-500">Tiêu đề bài viết 1</a></h2>
+                    <h2><a href="../pages/Blog.jsx" class="text-lime-400 hover:text-lime-500">Tiêu đề bài viết 1</a></h2>
                     <p>Ngày đăng: 08/04/2025</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>

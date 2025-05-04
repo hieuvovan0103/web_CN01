@@ -6,9 +6,7 @@ import NavBar from "./NavLink.jsx";
 const Layout = ({ children }) => {
   return (
     <>
-        <NavBar />
         <main>{children}</main>
-        <Footer />
     </>
   );
 };
