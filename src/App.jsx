@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import Layout from './components/Layout';
 import AdminLayout from './components/AdminLayout';
 
@@ -16,19 +16,33 @@ import Navbar from './components/NavLink.jsx';
 import Footer from './components/Footer.jsx';
 import Register from './pages/RegisterPage.jsx';
 import NotFound from './pages/NotFound.jsx';
-import Dashboard from "./pages/Dashboard.jsx";
+// import Dashboard from "./pages/Dashboard.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 function AppContent() {
   const location = useLocation();
   const isAdminPath = location.pathname.startsWith("/admin");
   const hideLayout = ["/login", "/register", "/admin"].some(path => location.pathname.startsWith(path));
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = React.useState(() => {
+      return localStorage.getItem('isLoggedIn') === 'true';
+  });
+
+    React.useEffect(() => {
+        localStorage.setItem('isLoggedIn', isLoggedIn ? 'true' : 'false');
+    }, [isLoggedIn]);
+
+    const handleLogout = () => {
+        setIsLoggedIn(false);
+        localStorage.removeItem("isLoggedIn");
+        navigate('/login');
+    };
 
   if (isAdminPath) {
     return (
-        <AdminLayout setIsLoggedIn={setIsLoggedIn}>
-          <Routes>
-            <Route path="/admin" element={<Dashboard />} />
+        <AdminLayout handleLogout={handleLogout}>
+        <Routes>
+            <Route path="/admin" element={<AdminDashboard />} />
             {/* Có thể thêm các route con tại đây, ví dụ: */}
             {/* <Route path="/admin/users" element={<UserManagement />} /> */}
           </Routes>
@@ -51,7 +65,6 @@ function AppContent() {
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="/admin" element={<Dashboard />} />
           </Routes>
         </Layout>
         {!hideLayout && <Footer isLoggedIn={isLoggedIn} />}

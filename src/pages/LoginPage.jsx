@@ -1,7 +1,8 @@
 import { useState } from "react";
 // import validator from "validator";
 // import { useNavigate } from 'react-router-dom';
-import {AuthProvider} from '../contexts/AuthContext.jsx';
+
+import Cookies from 'js-cookie';
 
 export default function Login() {
     // const [email, setEmail] = useState('');
@@ -14,13 +15,17 @@ export default function Login() {
     // const navigate = useNavigate();
     // const { login } = useAuth();
 
-    const login = (data) => {
+    const handleLoginSuccess = (data) => {
         if (data.success) {
             const userData = {
-                id: data.id,
                 username: data.username,
+                name: data.name,
                 role: data.role,
             };
+
+            // Lưu vào cookie
+            Cookies.set('user', JSON.stringify(userData), { expires: 7 });
+
             setUser(userData);
             return { success: true, redirect: data.redirect };
         } else {
@@ -58,10 +63,12 @@ export default function Login() {
             });
 
             const data = await response.json();
+            console.log(data);
+
 
             if (data.success) {
                 setError('');
-                login({data})
+                handleLoginSuccess(data);
                 window.location.href = data.redirect;
                 // Xử lý sau đăng nhập
             } else {

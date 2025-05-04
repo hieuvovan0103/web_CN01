@@ -60,6 +60,8 @@ if ($user && password_verify($password, $user['password'])) {
     http_response_code(200);
     echo json_encode([
         'success' => true,
+        'username' => $user['username'],
+        'name' => $user['full_name'] ?? '',
         'message' => 'Đăng nhập thành công',
         'role' => $user['role'] ?? 'user',
         'redirect' => $redirectUrl
