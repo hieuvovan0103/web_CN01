@@ -27,10 +27,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
 }
 
 h1 {
@@ -61,6 +60,13 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  max-width: none !important; /* Bỏ giới hạn độ rộng tối đa */
+}
+
+/* Bỏ tất cả các giới hạn width container nếu có */
+.container, .main-container, .page-container {
+  max-width: none !important;
+  width: 100% !important;
 }
 
 .flex-grow {
@@ -72,6 +78,7 @@ html, body {
 .search-bar {
   padding: 20px 0;
   border: none;
+  width: 100%;
 }
 
 .search-bar input {
@@ -87,6 +94,7 @@ html, body {
   border-radius: 5px;
   overflow: hidden;
   transition: transform 0.2s;
+  width: 100%;
 }
 
 .post-card:hover {
