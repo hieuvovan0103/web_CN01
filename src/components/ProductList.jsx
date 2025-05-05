@@ -1,56 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Dữ liệu sản phẩm tĩnh
 const staticProducts = [
   {
     product_id: 1,
-    name: "Áo thun nam cổ tròn",
+    name: "Áo tinh hoa vũ trụ",
     description: "Áo thun chất liệu cotton thoáng mát",
-    price: 150000,
+    price: 250000,
     is_new: true,
-    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+    primary_image: "src/img/aolmao.jpg"
   },
   {
     product_id: 2,
-    name: "Áo thun nam cổ tròn",
+    name: "Áo đen trơn",
     description: "Áo thun chất liệu cotton thoáng mát",
     price: 150000,
-    is_new: true,
-    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+    is_new: false,
+    primary_image: "src/img/aodentron.jpg"
   },
   {
     product_id: 3,
-    name: "Áo thun nam cổ tròn",
+    name: "Áo trắng trơn",
     description: "Áo thun chất liệu cotton thoáng mát",
     price: 150000,
-    is_new: true,
-    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+    is_new: false ,
+    primary_image: "src/img/aotrangtron.jpg"
   },
   {
     product_id: 4,
-    name: "Áo thun nam cổ tròn",
+    name: "Áo xám phong cách",
     description: "Áo thun chất liệu cotton thoáng mát",
     price: 150000,
     is_new: true,
-    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+    primary_image: "src/img/aoxam.jpg"
   },
   {
     product_id: 5,
-    name: "Áo thun nam cổ tròn",
+    name: "Áo họa tiết anime sành điệu",
     description: "Áo thun chất liệu cotton thoáng mát",
     price: 150000,
     is_new: true,
-    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+    primary_image: "src/img/aoxemay.jpg"
   },
-  {
-    product_id: 6,
-    name: "Áo thun nam cổ tròn",
-    description: "Áo thun chất liệu cotton thoáng mát",
-    price: 150000,
-    is_new: true,
-    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
-  },
+  
 ];
 
 const ProductList = () => {
