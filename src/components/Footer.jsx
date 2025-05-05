@@ -58,8 +58,7 @@ const Footer = () => {
         </div>
         
         <div className="bg-lime-400 text-center flex-1 p-4 w-full text-center border ">
-          © 2035 bản quyền của T Shop.
-          <div className="md:inline-block md:ps-1">Tự hào tạo ra với <a className="underline text-inherit cursor-pointer hover:text-gray-500 transition-colors">Wix.com</a></div>
+          NHÓM 7
         </div>
       </div>
     </footer>
