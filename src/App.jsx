@@ -16,6 +16,7 @@ import Navbar from './components/NavLink.jsx';
 import Footer from './components/Footer.jsx';
 import Register from './pages/RegisterPage.jsx';
 import NotFound from './pages/NotFound.jsx';
+import ProductDetail from './components/ProductDetail';
 // import Dashboard from "./pages/Dashboard.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 
@@ -65,6 +66,7 @@ function AppContent() {
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/products/:productId" element={<ProductDetail />} />
           </Routes>
         </Layout>
         {!hideLayout && <Footer isLoggedIn={isLoggedIn} />}
