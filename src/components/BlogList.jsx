@@ -36,7 +36,7 @@ const BlogList = () => {
   return (
     <div>
       <section className="search-bar">
-        <div className="container">
+        <div className="container ms-5">
           <input
             type="text"
             placeholder="Tìm kiếm bài viết..."
@@ -44,13 +44,13 @@ const BlogList = () => {
             value={searchQuery}
             onChange={handleSearch}
           />
-          <button className="bg-lime-400 text-black ms-2">Tìm</button>
+          <button className="p-3 bg-lime-400 text-black ms-2">Tìm</button>
         </div>
       </section>
 
       <section className="py-10">
         <div>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="flex flex-col space-y-7 p-3 md:space-y-0 md:grid md:grid-cols-3 md:gap-5">
             {filteredBlogs.length > 0 ? (
               filteredBlogs.map((blog) => (
                 <div key={blog.id} className="post-card">
@@ -74,7 +74,7 @@ const BlogList = () => {
               <p>Không có bài viết nào.</p>
             )}
           </div>
-          <button className="block bg-black hover:text-white px-8 py-3 text-lg mt-3 m-auto">
+          <button className="block bg-black text-white hover:text-lime-400 px-8 py-3 text-lg mt-3 m-auto">
             Tải thêm
           </button>
         </div>
