@@ -1,18 +1,70 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductList = ({ products }) => {
+// Dữ liệu sản phẩm tĩnh
+const staticProducts = [
+  {
+    product_id: 1,
+    name: "Áo thun nam cổ tròn",
+    description: "Áo thun chất liệu cotton thoáng mát",
+    price: 150000,
+    is_new: true,
+    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+  },
+  {
+    product_id: 2,
+    name: "Áo thun nam cổ tròn",
+    description: "Áo thun chất liệu cotton thoáng mát",
+    price: 150000,
+    is_new: true,
+    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+  },
+  {
+    product_id: 3,
+    name: "Áo thun nam cổ tròn",
+    description: "Áo thun chất liệu cotton thoáng mát",
+    price: 150000,
+    is_new: true,
+    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+  },
+  {
+    product_id: 4,
+    name: "Áo thun nam cổ tròn",
+    description: "Áo thun chất liệu cotton thoáng mát",
+    price: 150000,
+    is_new: true,
+    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+  },
+  {
+    product_id: 5,
+    name: "Áo thun nam cổ tròn",
+    description: "Áo thun chất liệu cotton thoáng mát",
+    price: 150000,
+    is_new: true,
+    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+  },
+  {
+    product_id: 6,
+    name: "Áo thun nam cổ tròn",
+    description: "Áo thun chất liệu cotton thoáng mát",
+    price: 150000,
+    is_new: true,
+    primary_image: "https://via.placeholder.com/300x300?text=Áo+Thun"
+  },
+];
+
+const ProductList = () => {
   return (
     <div className="container mx-auto px-1 py-8">
       <h1 className="text-3xl font-bold mb-8 text-black">Sản phẩm</h1>
       
-      {products.length === 0 ? (
+      {staticProducts.length === 0 ? (
         <div className="text-center py-12">
           <p className="text-lg text-gray-600">Không tìm thấy sản phẩm phù hợp</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
+          {staticProducts.map((product) => (
             <div key={product.product_id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <Link to={`/products/${product.product_id}`}>
                 <div className="bg-gray-100 h-48 flex items-center justify-center">

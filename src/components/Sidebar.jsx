@@ -33,20 +33,7 @@ const Sidebar = ({ filterOptions, filters, onFilterChange, currentCategory }) =>
 
   return (
     <div className="w-64 p-4 bg-white shadow-md">
-  {/* Bộ lọc Danh mục */}
-  <div className="mb-6">
-    <h2 className="font-bold text-lg mb-3 text-gray-800 border-b pb-2">Danh mục</h2>
-    <ul className="space-y-2">
-      <li className="flex items-center">
-        <input type="checkbox" id="category-1" className="mr-2" />
-        <label htmlFor="category-1" className="text-gray-700">Áo thun</label>
-      </li>
-      <li className="flex items-center">
-        <input type="checkbox" id="category-2" className="mr-2" />
-        <label htmlFor="category-2" className="text-gray-700">Áo sơ mi</label>
-      </li>
-    </ul>
-  </div>
+  
 
   {/* Bộ lọc Giá */}
   <div className="mb-6">
