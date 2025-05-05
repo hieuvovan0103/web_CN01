@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
@@ -8,7 +9,7 @@ const BlogList = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost/backend/authentication/getBlog.php'); // Replace with your API URL
+        const response = await fetch('http://localhost/backend/authentication/getBlogs.php');
         const data = await response.json();
         if (data.error) {
           console.error(data.error);
@@ -44,7 +45,7 @@ const BlogList = () => {
             value={searchQuery}
             onChange={handleSearch}
           />
-          <button className="p-3 bg-lime-400 text-black ms-2">Tìm</button>
+          <button className="p-3 bg-lime-400 text-black ms-2 focus:outline-none">Tìm</button>
         </div>
       </section>
 
@@ -59,12 +60,9 @@ const BlogList = () => {
                     alt={blog.title}
                   />
                   <h2>
-                    <a
-                      href={`/blog/${blog.id}`} // Link to individual blog page
-                      className="text-lime-400 hover:text-lime-500"
-                    >
+                    <Link to={`/blog/${blog.id}`} className="text-lime-400 hover:text-lime-500">
                       {blog.title}
-                    </a>
+                    </Link>
                   </h2>
                   <p>Ngày đăng: {blog.date}</p>
                   <p>{blog.excerpt}</p>

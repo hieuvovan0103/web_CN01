@@ -6,8 +6,8 @@ import AdminLayout from './components/AdminLayout';
 
 import HomePage from './pages/HomePage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
-import BlogList from './components/BlogList.jsx';
 import Blog from './pages/Blog.jsx';
+import BlogList from './pages/BlogList.jsx';
 import ProductPage from './pages/ProductPage.jsx';
 import Login from './pages/LoginPage.jsx';
 import QA from './pages/QA';
@@ -58,6 +58,7 @@ function AppContent() {
             <Route path="/" element={<HomePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogList />} />
+            <Route path="/blog/:id" element={<Blog />} />
             <Route path="/products" element={<ProductPage />} />
             <Route path="/QA" element={<QA />} />
             <Route path="/about" element={<About />} />
