@@ -37,8 +37,8 @@ const Blog = () => {
   if (!blog) return <p>Bài viết không tồn tại.</p>;
 
   return (
-    <div>
-      <section className="post-content py-10">
+    <div className="p-10">
+      <section className="post-content">
         <div className="container">
           <h1 className="text-4xl font-bold mb-10">{blog.title}</h1>
           <div className="text-gray-500 mb-5">
@@ -55,7 +55,7 @@ const Blog = () => {
         </div>
       </section>
 
-      <section className="related-posts">
+      <section className="related-posts mt-5">
         <div className="container">
           <h3 className="text-2xl font-semibold mb-4">Bài viết liên quan</h3>
           <div className="flex flex-col space-y-7 md:space-y-0 md:grid md:grid-cols-2 md:gap-5">
